@@ -33,8 +33,6 @@ Using your webcam and the mediapipe library, the system tracks key facial landma
 ### 1. Clone the repository
 ```bash
 git clone https://github.com/reinesana/MeowCV.git
-
-cd MeowCV
 ```
 
 ### 2. Install dependencies
