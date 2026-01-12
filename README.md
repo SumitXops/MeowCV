@@ -90,7 +90,7 @@ If you want to add new cat reactions, improve detection logic, or tweak threshol
 
 This project is intentionally lightweight and heuristic-based, so experimentation is encouraged.
 
-###How to contribute
+### How to contribute
 
 1. Fork the repository  
 2. Create a new branch
