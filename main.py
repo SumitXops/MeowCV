@@ -18,13 +18,10 @@ face_mesh = mp.solutions.face_mesh.FaceMesh(
 
 cam = cv2.VideoCapture(0)
 
-def cat_tongue(face_landmark_points):
-    top_lip = face_landmark_points.landmark[13]
-    bottom_lip = face_landmark_points.landmark[14]
-
-    mouth_open = abs(top_lip.y - bottom_lip.y)
-
-    return mouth_open > 0.04
+# Thresholds (tuned for cat face sensitivity)
+eye_opening_threshold = 0.04
+mouth_open_threshold = 0.04
+squinting_threshold = 0.021
 
 def cat_shock(face_landmark_points):
     l_top = face_landmark_points.landmark[159]
@@ -32,15 +29,17 @@ def cat_shock(face_landmark_points):
     r_top = face_landmark_points.landmark[386]
     r_bot = face_landmark_points.landmark[374]
 
-    eye_opening = (
-        abs(l_top.y - l_bot.y) +
-        abs(r_top.y - r_bot.y)
-    ) / 2.0
+    eye_opening = (abs(l_top.y - l_bot.y) + abs(r_top.y - r_bot.y)) / 2.0
 
-    return (
-        eye_opening > 0.04
-    )
+    return eye_opening > eye_opening_threshold
 
+def cat_tongue(face_landmark_points):
+    top_lip = face_landmark_points.landmark[13]
+    bottom_lip = face_landmark_points.landmark[14]
+
+    mouth_open = abs(top_lip.y - bottom_lip.y)
+
+    return mouth_open > mouth_open_threshold
 
 def cat_glare(face_landmark_points):
     l_top = face_landmark_points.landmark[159]
@@ -54,7 +53,7 @@ def cat_glare(face_landmark_points):
         abs(r_top.y - r_bot.y)
     ) / 2.0
 
-    return eye_squint < 0.021
+    return eye_squint < squinting_threshold
 
 
 
