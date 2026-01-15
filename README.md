@@ -36,8 +36,7 @@ git clone https://github.com/reinesana/MeowCV.git
 ```
 
 ### 2. Install dependencies
-Make sure you have **Python 3.9 – 3.11** installed on your system. This project was tested with **Python 3.11.7** and `mediapipe==0.10.14`.
-
+Python **3.9 – 3.12** required (tested on Python 3.11.7). Python **3.13+** is not supported for `mediapipe==0.10.14`.
 ```bash
 pip install -r requirements.txt
 ```
