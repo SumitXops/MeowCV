@@ -2,7 +2,7 @@
 
 An openCV + mediapipe program that detects facial expressions and displays goated Tiktok cats like Rigby and Larry
 
-<img src="https://github.com/reinesana/MeowCV/blob/main/assets/cat-disgust.jpeg" width="300">
+<img src="https://github.com/SumitXops/MeowCV/blob/main/assets/cat-disgust.jpeg" width="300">
 
 ---
 
@@ -83,4 +83,5 @@ squinting_threshold = 0.020  # softer glare
 
 Have fun 🐱💻
 
-MIT License © 2026 Shana Nursoo  
+MIT License © 2026 Shana Nursoo 
+MIT License © 2026 Sumit Kumar
